@@ -1,0 +1,11 @@
+.container.col-10
+	%h3 User
+	.card{:style => "width: 18rem;"}
+	.card-body
+		%h5.card-title= @user.email
+		%h6.card-subtitle.mb-2.text-muted= @user.created_at
+		%p.card-text= "Number of Reviews: #{@user.reviews.count}"
+	%hr.col-10
+		%h3 Reviews
+		- @reviews.each do |review|
+			%li.list-group-item= review.description

@@ -1,0 +1,13 @@
+.container.col-10
+	%h3.text-center Sign Up
+	%form#new_business.new_user{"accept-charset" => "UTF-8", :action => "/business", :method => "post"}
+		.form-group
+			%label{:for => "business_email"} Email
+			%input#business_email.form-control{:name => "business[name]", :type => "email"}
+		.form-group
+			%label{:for => "business_name"} Name
+			%input#business_address.form-control{:name => "business[name]", :type => "name"}
+		.form-group
+			%label{:for => "business_password"} Password
+			%input#business_food_type.form-control{:name => "business[password]", :type => "password"}
+	%input.btn.btn-secondary{:name => "commit", :type => "submit", :value => "Sign Up"}

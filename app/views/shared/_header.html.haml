@@ -1,0 +1,24 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => "#"} Yelp Clone
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item
+        %a.nav-link{:href => "#{businesses_path}"} Business
+      %li.nav-item
+        %a.nav-link{:href => "#{new_business_path}"} Add
+      %li.nav-item
+        %a.nav-link{:href => "#{recent_path}"} Recent Reviews
+    %ul.navbar-nav.ml-auto
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          Welcome #{current_user.email if logged_in?}
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          - if logged_in? 
+            %a.dropdown-item{:href => "#{logout_path}"} Log Out
+          - else
+            %a.dropdown-item{:href => "#{register_path}"} Register 
+            %a.dropdown-item{:href => "#{login_path}"} Log In
+          
+%br

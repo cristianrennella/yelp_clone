@@ -1,0 +1,8 @@
+.list-group.align-items-center
+  - @businesses.each do |business|
+    %a.list-group-item.list-group-item-action.flex-column.align-items-start.w-50.p-5{:href => "#{business_path(business.id)}"}
+      .d-flex.w-100.justify-content-between
+        %h5.mb-1= business.name
+        %small= business.food_type
+      %p.mb-1= business.address
+      %small Donec id elit non mi porta.

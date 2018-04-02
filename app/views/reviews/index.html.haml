@@ -1,0 +1,5 @@
+.container.col-10
+	%h3 Recent Reviews
+	%ul.list-group
+		- @reviews.each do |review|
+			%li.list-group-item= review.description

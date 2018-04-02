@@ -1,0 +1,7 @@
+.container.col-10
+	%h3.text-center Add New Review
+	%form#new_business.new_user{"accept-charset" => "UTF-8", :action => "/business", :method => "post"}
+		.form-group
+			%label{:for => "business_description"} Description
+			%input#business_name.form-control{:name => "business[name]", :type => "name"}
+	%input.btn.btn-secondary{:name => "commit", :type => "submit", :value => "Add Review"}

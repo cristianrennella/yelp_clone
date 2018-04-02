@@ -1,0 +1,13 @@
+.container.col-10
+	%h3.text-center Add New Business
+	%form#new_business.new_user{"accept-charset" => "UTF-8", :action => "/business", :method => "post"}
+		.form-group
+			%label{:for => "business_name"} Name
+			%input#business_name.form-control{:name => "business[name]", :type => "name"}
+		.form-group
+			%label{:for => "business_address"} Address
+			%input#business_address.form-control{:name => "business[address]", :type => "address"}
+		.form-group
+			%label{:for => "business_food_type"} Food Type
+			%input#business_food_type.form-control{:name => "business[food_type]", :type => "food_type"}
+	%input.btn.btn-secondary{:name => "commit", :type => "submit", :value => "Add Business"}

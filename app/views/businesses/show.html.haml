@@ -1,0 +1,23 @@
+.jumbotron.jumbotron-fluid
+	.container
+		%h1.display-4= @business.name
+		%p.lead= @business.address
+		%p.lead= @business.food_type
+
+%hr.col-10
+.container.col-10
+	%h3 Reviews
+	%ul.list-group
+		- @reviews.each do |review|
+			%li.list-group-item
+				= review.description
+				= link_to "by #{review.user.email}", user_path(:id => review.user.id), :class => "badge badge-primary"
+%br
+%hr.col-10
+.container.col-10
+	= render 'shared/errors', object: @review
+	%header
+		%h5 Add Review
+	= bootstrap_form_for [@business, Review.new] do |f|
+		= f.text_area :description
+		= f.submit "Add Review", class: "btn btn-success"
